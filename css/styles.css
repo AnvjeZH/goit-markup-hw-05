@@ -18,6 +18,7 @@
   --filter-background-color: #f4f4fd;
   --border-color: #e7e9fc;
   --border-accent-color: #f4f4fd;
+  --portfolio-desc-color: #f4f4fd;
   --customers-icon-color: #8e8f99;
   --footer-bg-cl-icon: #31d0aa;
   --modal-window-bg-cl: #fcfcfc;
@@ -163,8 +164,8 @@ body {
 .menu-link {
   position: relative;
 
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 25px;
+  padding-bottom: 28px;
 
   font-weight: 500;
   line-height: 1.5;
@@ -185,7 +186,8 @@ body {
 }
 .menu-link.current::after {
   position: absolute;
-  bottom: -16px;
+  left: 0;
+  bottom: 0;
 
   content: "";
   display: block;
@@ -563,6 +565,45 @@ body {
 .portfolio-item:not(:nth-last-child(-n + 3)) {
   margin-bottom: 48px;
 } */
+
+.portfolio-thumb {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--brand-color);
+  background-blend-mode: soft-light;
+  mix-blend-mode: normal;
+
+  transform: translateY(100%);
+  transition: transform var(--animation);
+}
+.portfolio-link:hover .portfolio-overlay,
+.portfolio-link:focus .portfolio-overlay {
+  transform: translateY(0%);
+}
+.portfolio-description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 40px;
+  padding-right: 32px;
+  padding-left: 32px;
+}
+
+.portfolio-description-text {
+  line-height: 1.5;
+
+  color: var(--portfolio-desc-color);
+}
 .portfolio-card {
   padding-top: 32px;
   padding-right: auto;
